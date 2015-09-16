@@ -1,0 +1,112 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly AForge.Video.FFMPEG, Version=2.2.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Struct AForge.Video.FFMPEG.VideoCodec: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    AForge.Video.FFMPEG.VideoCodec Default = -1 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec MPEG4 = 0 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec WMV1 = 1 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec WMV2 = 2 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec MSMPEG4v2 = 3 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec MSMPEG4v3 = 4 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec H263P = 5 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec FLV1 = 6 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec MPEG2 = 7 : Public, Static, Literal, HasDefault
+    AForge.Video.FFMPEG.VideoCodec Raw = 8 : Public, Static, Literal, HasDefault
+Class AForge.Video.FFMPEG.VideoFileReader: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Boolean IsOpen 'get ' : 
+    System.String CodecName 'get ' : 
+    Int64 FrameCount 'get ' : 
+    Int32 FrameRate 'get ' : 
+    Int32 Height 'get ' : 
+    Int32 Width 'get ' : 
+  Methods:
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    get_FrameRate(): PrivateScope, Public, HideBySig, SpecialName
+    get_FrameCount(): PrivateScope, Public, HideBySig, SpecialName
+    get_CodecName(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsOpen(): PrivateScope, Public, HideBySig, SpecialName
+    Open(String): PrivateScope, Public, HideBySig
+    ReadVideoFrame(): PrivateScope, Public, HideBySig
+    Close(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class AForge.Video.FFMPEG.VideoFileSource: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    AForge.Video.IVideoSource
+  Properties:
+    Boolean FrameIntervalFromSource 'get set' : 
+    Int32 FrameInterval 'get set' : 
+    Boolean IsRunning 'get ' : 
+    Int64 BytesReceived 'get ' : 
+    Int32 FramesReceived 'get ' : 
+    System.String Source 'get set' : 
+  Events:
+    AForge.Video.PlayingFinishedEventHandler PlayingFinished: SpecialName
+    AForge.Video.VideoSourceErrorEventHandler VideoSourceError: SpecialName
+    AForge.Video.NewFrameEventHandler NewFrame: SpecialName
+  Methods:
+    add_NewFrame(NewFrameEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_NewFrame(NewFrameEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_VideoSourceError(VideoSourceErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_VideoSourceError(VideoSourceErrorEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_PlayingFinished(PlayingFinishedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_PlayingFinished(PlayingFinishedEventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Source(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Source(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FramesReceived(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BytesReceived(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IsRunning(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FrameInterval(): PrivateScope, Public, HideBySig, SpecialName
+    set_FrameInterval(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_FrameIntervalFromSource(): PrivateScope, Public, HideBySig, SpecialName
+    set_FrameIntervalFromSource(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    Start(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    SignalToStop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    WaitForStop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Stop(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class AForge.Video.FFMPEG.VideoFileWriter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Boolean IsOpen 'get ' : 
+    AForge.Video.FFMPEG.VideoCodec Codec 'get ' : 
+    Int32 BitRate 'get ' : 
+    Int32 FrameRate 'get ' : 
+    Int32 Height 'get ' : 
+    Int32 Width 'get ' : 
+  Methods:
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    get_FrameRate(): PrivateScope, Public, HideBySig, SpecialName
+    get_BitRate(): PrivateScope, Public, HideBySig, SpecialName
+    get_Codec(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsOpen(): PrivateScope, Public, HideBySig, SpecialName
+    Open(String, Int32, Int32, Int32, VideoCodec, Int32): PrivateScope, Public, HideBySig
+    Open(String, Int32, Int32, Int32, VideoCodec): PrivateScope, Public, HideBySig
+    Open(String, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    Open(String, Int32, Int32): PrivateScope, Public, HideBySig
+    WriteVideoFrame(Bitmap, TimeSpan): PrivateScope, Public, HideBySig
+    WriteVideoFrame(Bitmap): PrivateScope, Public, HideBySig
+    Close(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
